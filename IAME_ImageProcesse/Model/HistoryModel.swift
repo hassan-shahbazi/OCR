@@ -18,12 +18,14 @@ class PersonObject: NSObject {
 }
 
 class HistoryObject: NSObject {
+    var id:         Int?
     var person:     PersonObject?
     var date:       Date?
     var image:      UIImage?
 }
 
 class HistoryManagedObject: NSManagedObject {
+    @NSManaged var id:  NSNumber?
     @NSManaged var firstName:  String?
     @NSManaged var sureName:   String?
     @NSManaged var birthdate:  Date?
@@ -36,6 +38,7 @@ class HistoryManagedObject: NSManagedObject {
 extension HistoryManagedObject {
     var object: HistoryObject {
         let object = HistoryObject()
+        object.id = self.id?.intValue
         object.person?.firstName = self.firstName
         object.person?.sureName = self.sureName
         object.person?.birthdate = self.birthdate

@@ -9,5 +9,7 @@
 import UIKit
 
 class HistoryViewModel: NSObject {
-
+    public func getHistory() -> [HistoryObject] {
+        return DatabaseManager.getAllObjects()
+    }
 }
