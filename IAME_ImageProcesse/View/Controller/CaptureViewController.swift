@@ -60,30 +60,19 @@ class CaptureViewController: UIViewController {
     }
     
     private func initaiteScanArea() {
-        let scanArea = UIView(frame: getScanArea())
-        scanArea.backgroundColor = UIColor.clear
-        scanArea.layer.masksToBounds = true
-        scanArea.layer.cornerRadius = 5.0
-        scanArea.layer.borderWidth = 1.0
-        scanArea.layer.borderColor = UIColor.white.cgColor
-        
+        let scanArea = ScanView(frame: getScanArea())
+        scanArea.shape()
         view.addSubview(scanArea)
     }
     
     private func initiateStatement() {
         let statementPoints = getStatementArea()
-        let statementTitle = UILabel(frame: statementPoints.0)
-        statementTitle.font = UIFont.boldSystemFont(ofSize: 20)
-        statementTitle.text = "Add ID Card"
-        statementTitle.textColor = UIColor.white
-        statementTitle.textAlignment = .center
+        let statementTitle = StatementLabel(frame: statementPoints.0)
+        statementTitle.shape("Add ID Card.", font: UIFont.boldSystemFont(ofSize: 20))
         view.addSubview(statementTitle)
         
-        let statementSubtitle = UILabel(frame: statementPoints.1)
-        statementSubtitle.font = UIFont.systemFont(ofSize: 17)
-        statementSubtitle.text = "Position your ID Card within the frame."
-        statementSubtitle.textColor = UIColor.white
-        statementSubtitle.textAlignment = .center
+        let statementSubtitle = StatementLabel(frame: statementPoints.1)
+        statementSubtitle.shape("Position your ID Card within the frame.", font: UIFont.systemFont(ofSize: 17))
         view.addSubview(statementSubtitle)
     }
     

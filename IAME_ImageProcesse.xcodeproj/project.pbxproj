@@ -20,6 +20,8 @@
 		17B3360721A6D4CD00C987DA /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360621A6D4CD00C987DA /* CircleButton.swift */; };
 		17B3360921A6D5E100C987DA /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */; };
 		17B3360B21A6DEA300C987DA /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360A21A6DEA300C987DA /* CaptureViewController.swift */; };
+		17B3360F21A7334300C987DA /* StatementLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360E21A7334300C987DA /* StatementLabel.swift */; };
+		17B3361121A7341E00C987DA /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361021A7341E00C987DA /* ScanView.swift */; };
 		5CCD6FDFE64B5D09DDE916F0 /* Pods_IAME_ImageProcesse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		17B3360621A6D4CD00C987DA /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		17B3360A21A6DEA300C987DA /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		17B3360E21A7334300C987DA /* StatementLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementLabel.swift; sourceTree = "<group>"; };
+		17B3361021A7341E00C987DA /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		2DC12C39D9C72F1551453B4C /* Pods-IAME_ImageProcesse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE9828330097BBC41A30E83 /* Pods-IAME_ImageProcesse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.release.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.release.xcconfig"; sourceTree = "<group>"; };
 		E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAME_ImageProcesse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				17B3360621A6D4CD00C987DA /* CircleButton.swift */,
+				17B3360E21A7334300C987DA /* StatementLabel.swift */,
+				17B3361021A7341E00C987DA /* ScanView.swift */,
 				17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */,
 			);
 			path = UIKit;
@@ -290,10 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B3360F21A7334300C987DA /* StatementLabel.swift in Sources */,
 				17B3360921A6D5E100C987DA /* HistoryTableViewCell.swift in Sources */,
 				17B3360121A6CA6000C987DA /* DatabaseManager.swift in Sources */,
 				17B3360321A6D46B00C987DA /* HistoryViewModel.swift in Sources */,
 				17B3360521A6D4B600C987DA /* HomeViewController.swift in Sources */,
+				17B3361121A7341E00C987DA /* ScanView.swift in Sources */,
 				17B3360721A6D4CD00C987DA /* CircleButton.swift in Sources */,
 				17B335FB21A68ED200C987DA /* IAME.xcdatamodeld in Sources */,
 				179A6BA121A681CB001773D6 /* AppDelegate.swift in Sources */,
