@@ -11,6 +11,12 @@
 		179A6BA621A681CB001773D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179A6BA421A681CB001773D6 /* Main.storyboard */; };
 		179A6BA821A681CE001773D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179A6BA721A681CE001773D6 /* Assets.xcassets */; };
 		179A6BAB21A681CE001773D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179A6BA921A681CE001773D6 /* LaunchScreen.storyboard */; };
+		179A6BB921A6863A001773D6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A6BB821A6863A001773D6 /* HomeViewController.swift */; };
+		179A6BBC21A686E0001773D6 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A6BBB21A686E0001773D6 /* CircleButton.swift */; };
+		17B335F221A68E4300C987DA /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F121A68E4300C987DA /* HistoryViewModel.swift */; };
+		17B335F721A68E9700C987DA /* DatabaseInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F621A68E9700C987DA /* DatabaseInstance.swift */; };
+		17B335FB21A68ED200C987DA /* IAME.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F921A68ED200C987DA /* IAME.xcdatamodeld */; };
+		17B335FF21A6929900C987DA /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335FE21A6929900C987DA /* HistoryModel.swift */; };
 		5CCD6FDFE64B5D09DDE916F0 /* Pods_IAME_ImageProcesse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +27,12 @@
 		179A6BA721A681CE001773D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		179A6BAA21A681CE001773D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		179A6BAC21A681CE001773D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		179A6BB821A6863A001773D6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		179A6BBB21A686E0001773D6 /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		17B335F121A68E4300C987DA /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		17B335F621A68E9700C987DA /* DatabaseInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseInstance.swift; sourceTree = "<group>"; };
+		17B335FA21A68ED200C987DA /* IAME.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IAME.xcdatamodel; sourceTree = "<group>"; };
+		17B335FE21A6929900C987DA /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		2DC12C39D9C72F1551453B4C /* Pods-IAME_ImageProcesse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE9828330097BBC41A30E83 /* Pods-IAME_ImageProcesse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.release.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.release.xcconfig"; sourceTree = "<group>"; };
 		E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAME_ImageProcesse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +83,8 @@
 		179A6BB221A681DF001773D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17B335FE21A6929900C987DA /* HistoryModel.swift */,
+				17B335F821A68EC100C987DA /* Database */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -78,6 +92,7 @@
 		179A6BB321A681E5001773D6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				17B335F121A68E4300C987DA /* HistoryViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -85,6 +100,8 @@
 		179A6BB421A681EA001773D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				179A6BBA21A686BA001773D6 /* UIKit */,
+				179A6BB721A685F9001773D6 /* Controller */,
 				179A6BB521A681F1001773D6 /* Interface */,
 			);
 			path = View;
@@ -106,6 +123,31 @@
 				179A6BAC21A681CE001773D6 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		179A6BB721A685F9001773D6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				179A6BB821A6863A001773D6 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		179A6BBA21A686BA001773D6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				179A6BBB21A686E0001773D6 /* CircleButton.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		17B335F821A68EC100C987DA /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				17B335F621A68E9700C987DA /* DatabaseInstance.swift */,
+				17B335F921A68ED200C987DA /* IAME.xcdatamodeld */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		9CD675AED2BC2873ACDB8007 /* Frameworks */ = {
@@ -239,7 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				179A6BBC21A686E0001773D6 /* CircleButton.swift in Sources */,
+				17B335FB21A68ED200C987DA /* IAME.xcdatamodeld in Sources */,
 				179A6BA121A681CB001773D6 /* AppDelegate.swift in Sources */,
+				179A6BB921A6863A001773D6 /* HomeViewController.swift in Sources */,
+				17B335F221A68E4300C987DA /* HistoryViewModel.swift in Sources */,
+				17B335FF21A6929900C987DA /* HistoryModel.swift in Sources */,
+				17B335F721A68E9700C987DA /* DatabaseInstance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +437,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92TDT63R6P;
 				INFOPLIST_FILE = "$(SRCROOT)/IAME_ImageProcesse/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IAME.IAME-ImageProcesse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -405,7 +456,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92TDT63R6P;
 				INFOPLIST_FILE = "$(SRCROOT)/IAME_ImageProcesse/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IAME.IAME-ImageProcesse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -435,6 +489,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		17B335F921A68ED200C987DA /* IAME.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				17B335FA21A68ED200C987DA /* IAME.xcdatamodel */,
+			);
+			currentVersion = 17B335FA21A68ED200C987DA /* IAME.xcdatamodel */;
+			path = IAME.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 179A6B9521A681CB001773D6 /* Project object */;
 }
