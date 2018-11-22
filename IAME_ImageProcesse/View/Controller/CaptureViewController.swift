@@ -21,6 +21,9 @@ class CaptureViewController: UIViewController {
         initiateCaptureSession()
         initiateVideoPreviewLayer()
         initiateBackgroundLayer()
+        initaiteScanArea()
+        
+        initiateStatement()
         initiateButton()
     }
     
@@ -56,9 +59,36 @@ class CaptureViewController: UIViewController {
         view.layer.insertSublayer(maskLayer, above: videoPreviewLayer)
     }
     
+    private func initaiteScanArea() {
+        let scanArea = UIView(frame: getScanArea())
+        scanArea.backgroundColor = UIColor.clear
+        scanArea.layer.masksToBounds = true
+        scanArea.layer.cornerRadius = 5.0
+        scanArea.layer.borderWidth = 1.0
+        scanArea.layer.borderColor = UIColor.white.cgColor
+        
+        view.addSubview(scanArea)
+    }
+    
+    private func initiateStatement() {
+        let statementPoints = getStatementArea()
+        let statementTitle = UILabel(frame: statementPoints.0)
+        statementTitle.font = UIFont.boldSystemFont(ofSize: 20)
+        statementTitle.text = "Add ID Card"
+        statementTitle.textColor = UIColor.white
+        statementTitle.textAlignment = .center
+        view.addSubview(statementTitle)
+        
+        let statementSubtitle = UILabel(frame: statementPoints.1)
+        statementSubtitle.font = UIFont.systemFont(ofSize: 17)
+        statementSubtitle.text = "Position your ID Card within the frame."
+        statementSubtitle.textColor = UIColor.white
+        statementSubtitle.textAlignment = .center
+        view.addSubview(statementSubtitle)
+    }
+    
     private func initiateButton() {
         cancelButton.frame = getButtonArea()
-        cancelButton.backgroundColor = UIColor.clear
         cancelButton.setBackgroundImage(UIImage(named: "camera_button_off"), for: .normal)
         cancelButton.addTarget(self, action: #selector(startScanning), for:.touchUpInside)
         cancelButton.shapeButton()
@@ -68,26 +98,31 @@ class CaptureViewController: UIViewController {
     @objc func startScanning() {
         cancelButton.setBackgroundImage(UIImage(named: "camera_button_off"), for: .normal)
         cancelButton.setImage(UIImage(named: "loading_card"), for: .normal)
-        rotateButton()
-    }
-    
-    private func rotateButton() {
-        UIView.animate(withDuration: 1.0, delay: 0, options: .curveLinear, animations: {
-            self.cancelButton.transform = self.cancelButton.transform.rotated(by: CGFloat(Double.pi))
-        }) { (finished: Bool) in
-            self.rotateButton()
-        }
+        cancelButton.rotateButton()
     }
 }
 
 extension CaptureViewController {
     private func getScanArea() -> CGRect {
-        let width: CGFloat = self.view.frame.width - 24
+        let width: CGFloat = view.frame.width - 24
         let height: CGFloat = 240.0
-        let point = CGPoint(x: self.view.frame.midX - width/2, y: self.view.frame.midY - (width+60.0)/2)
+        let point = CGPoint(x: view.frame.midX - width/2, y: view.frame.midY - (width+60.0)/2)
         let size = CGSize(width: width, height: height)
         
         return CGRect(origin: point, size: size)
+    }
+    
+    private func getStatementArea() -> (CGRect, CGRect) {
+        let scanArea = getScanArea()
+        let width: CGFloat = view.frame.width - 16
+        let height: CGFloat = 24
+        let size = CGSize(width: width, height: height)
+        
+        let y = scanArea.origin.y + scanArea.height + 16
+        let titlePoint: CGPoint = CGPoint(x: view.frame.width/2 - width/2, y: y)
+        let subtitlePoint: CGPoint = CGPoint(x: view.frame.width/2 - width/2, y: y + height + 8)
+        
+        return (CGRect(origin: titlePoint, size: size), CGRect(origin: subtitlePoint, size: size))
     }
     
     private func getButtonArea() -> CGRect {
