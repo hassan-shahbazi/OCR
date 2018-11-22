@@ -21,6 +21,10 @@ class HomeViewController: UIViewController {
     private func loadHistory() {
         history = viewModel.getHistory()
     }
+    
+    @IBAction func captureButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "capture", sender: self)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {

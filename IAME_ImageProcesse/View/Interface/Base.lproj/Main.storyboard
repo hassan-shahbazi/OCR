@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--IAME Image-->
+        <!--IAME-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,6 +92,9 @@
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="captureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="07s-qC-Rpg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,11 +108,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="IAME Image" id="Wxx-KO-FbL"/>
+                    <navigationItem key="navigationItem" title="IAME" id="Wxx-KO-FbL">
+                        <barButtonItem key="backBarButtonItem" title="History" id="e7d-Ur-o6a"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="zix-jy-Ymq" kind="show" identifier="capture" id="o3M-7T-3W0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="133.5832083958021"/>
+        </scene>
+        <!--Scan ID Card-->
+        <scene sceneID="9xQ-sH-xBW">
+            <objects>
+                <viewController id="zix-jy-Ymq" customClass="CaptureViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gmz-6d-jIY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="geZ-Gd-Ua9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scan ID Card" id="Skg-xk-iT2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xT0-Lx-Wdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1783" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dus-hH-v0f">

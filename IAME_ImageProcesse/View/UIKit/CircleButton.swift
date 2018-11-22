@@ -16,7 +16,7 @@ class CircleButton: UIButton {
         self.shapeButton()
     }
     
-    private func shapeButton() {
+    public func shapeButton() {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = self.frame.width / 2
     }
