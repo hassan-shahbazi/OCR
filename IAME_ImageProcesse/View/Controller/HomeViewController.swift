@@ -29,6 +29,9 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "hisotry_cell") as? HistoryTableViewCell else { return UITableViewCell() }
+        cell.setup(history?[indexPath.row])
+        
+        return cell
     }
 }

@@ -46,7 +46,9 @@ extension HistoryManagedObject {
         object.person?.nationaliy = self.nationaliy
         
         object.date = self.date
-        if let img = self.image { object.image = UIImage(data: img) }
+        DispatchQueue.global().async {
+            if let img = self.image { object.image = UIImage(data: img) }
+        }
         
         return object
     }
