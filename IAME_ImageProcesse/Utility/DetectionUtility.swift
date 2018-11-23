@@ -11,7 +11,7 @@ import CoreML
 import Vision
 
 protocol DetectionUtilityDelegate {
-    func imageDidDetected(_ image: UIImage, at rect: CGRect)
+    func imageDidDetected(_ image: CIImage, at rect: CGRect)
 }
 
 class DetectionUtility: NSObject {
@@ -26,7 +26,7 @@ class DetectionUtility: NSObject {
     public func detectRectangel(_ liveImage: CIImage) {
         self.inputImage = liveImage
         
-        let uiImage = UIImage(ciImage: inputImage)
+        let uiImage = UIImage(ciImage: liveImage)
         let orientation = Int32(uiImage.imageOrientation.rawValue)
         inputImage = inputImage.oriented(forExifOrientation: orientation)
         
@@ -35,7 +35,6 @@ class DetectionUtility: NSObject {
         rectangleQueue.async {
             try? handler.perform([self.rectanglesRequest])
         }
-
     }
     
     private func handleRectangles(request: VNRequest, error: Error?) {
@@ -58,9 +57,7 @@ class DetectionUtility: NSObject {
                 ])
         
         DispatchQueue.main.async {
-            self.delegate?.imageDidDetected(UIImage(ciImage: correctedImage), at: boundingBox)
+            self.delegate?.imageDidDetected(correctedImage, at: boundingBox)
         }
-        
     }
-
 }

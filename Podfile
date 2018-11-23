@@ -2,6 +2,9 @@
 target 'IAME_ImageProcesse' do
   use_frameworks!
 
-  pod 'SwiftOCR'
+  pod 'Firebase/Core'
+  pod 'Firebase/MLVision'
+  pod 'Firebase/MLVisionTextModel'
+
 
 end

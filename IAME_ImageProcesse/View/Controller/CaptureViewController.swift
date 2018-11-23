@@ -11,7 +11,7 @@ import Foundation
 import AVFoundation
 import Vision
 
-let debugMode = false
+let debugMode = true
 
 class CaptureViewController: UIViewController {
     private var bufferSize: CGSize = .zero
@@ -22,7 +22,9 @@ class CaptureViewController: UIViewController {
     private let cancelButton = CircleButton()
     private var scanArea: ScanView!
     private var imgView: UIImageView!
+    private var capturedImage: CIImage!
     private let detection = DetectionUtility()
+    private let ocrUtility = OCRUtility()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,17 +125,24 @@ class CaptureViewController: UIViewController {
         view.addSubview(imgView)
     }
     
+    private func updateScanArea(_ found: Bool) {
+        DispatchQueue.main.async {
+            self.scanArea.layer.borderColor = (found) ? #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            let btnImage = (found) ? "camera_button_on" : "camera_button_off"
+            
+            self.cancelButton.setBackgroundImage(UIImage(named: btnImage), for: .normal)
+            self.cancelButton.isEnabled = found
+        }
+    }
+    
     @objc func analyzeCard() {
         cancelButton.setBackgroundImage(UIImage(named: "camera_button_off"), for: .normal)
         cancelButton.setImage(UIImage(named: "loading_card"), for: .normal)
         cancelButton.rotateButton()
-    }
-    
-    private func updateScanArea(_ found: Bool) {
-        DispatchQueue.main.async {
-            print("found: \(found)")
-            self.scanArea.layer.borderColor = (found) ? #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        }
+
+        let context = CIContext()
+        let cgImage = context.createCGImage(capturedImage, from: capturedImage.extent)
+        ocrUtility.detectText(image: UIImage(cgImage: cgImage!))
     }
 }
 
@@ -186,9 +195,10 @@ extension CaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate  {
 }
 
 extension CaptureViewController: DetectionUtilityDelegate {
-    func imageDidDetected(_ image: UIImage, at rect: CGRect) {
+    func imageDidDetected(_ image: CIImage, at rect: CGRect) {
+        self.capturedImage = image
         self.updateScanArea(self.scannedImageIsInAcceptanceArea(rect))
-        if debugMode { self.imgView.image = image }
+        if debugMode { self.imgView.image = UIImage(ciImage: image) }
     }
     
     private func scannedImageIsInAcceptanceArea(_ scannedArea: CGRect) -> Bool {
