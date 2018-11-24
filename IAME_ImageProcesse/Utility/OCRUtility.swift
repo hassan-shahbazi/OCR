@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseMLVision
 
+typealias textDetectionCompletion = ((_ error: Error?, _ blocks: [String]?) -> Void)
+
 class OCRUtility: NSObject {
     lazy var vision = Vision.vision()
     var textRecognizer: VisionTextRecognizer!
@@ -19,40 +21,17 @@ class OCRUtility: NSObject {
         super.init()
     }
     
-    func detectText (image: UIImage) {
+    func detectText (image: UIImage, _ completion: @escaping textDetectionCompletion) {
         textRecognizer = vision.onDeviceTextRecognizer()
         let visionImage = VisionImage(image: image)
         
         textRecognizer.process(visionImage) { result, error in
-            guard error == nil, let result = result else {
-                // ...
-                return
+            if let error = error {
+                completion(error, nil);
             }
             
-            for block in result.blocks {
-                print(block.text)
-//                let blockText = block.text
-                
-                
-//                let blockConfidence = block.confidence
-//                let blockLanguages = block.recognizedLanguages
-//                let blockCornerPoints = block.cornerPoints
-//                let blockFrame = block.frame
-//                for line in block.lines {
-//                    let lineText = line.text
-//                    let lineConfidence = line.confidence
-//                    let lineLanguages = line.recognizedLanguages
-//                    let lineCornerPoints = line.cornerPoints
-//                    let lineFrame = line.frame
-//                    for element in line.elements {
-//                        let elementText = element.text
-//                        let elementConfidence = element.confidence
-//                        let elementLanguages = element.recognizedLanguages
-//                        let elementCornerPoints = element.cornerPoints
-//                        let elementFrame = element.frame
-//                    }
-//                    print(line)
-//                }
+            else if let blocks = result?.blocks {
+                completion(nil, blocks.map({ return $0.text }))
             }
         }
     }

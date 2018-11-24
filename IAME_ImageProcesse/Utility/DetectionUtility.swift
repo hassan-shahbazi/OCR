@@ -11,7 +11,7 @@ import CoreML
 import Vision
 
 protocol DetectionUtilityDelegate {
-    func imageDidDetected(_ image: CIImage, at rect: CGRect)
+    func didDetectImage(_ image: CIImage, at rect: CGRect)
 }
 
 class DetectionUtility: NSObject {
@@ -25,13 +25,7 @@ class DetectionUtility: NSObject {
     
     public func detectRectangel(_ liveImage: CIImage) {
         self.inputImage = liveImage
-        
-        let uiImage = UIImage(ciImage: liveImage)
-        let orientation = Int32(uiImage.imageOrientation.rawValue)
-        inputImage = inputImage.oriented(forExifOrientation: orientation)
-        
-        guard let cgImageOrientation = CGImagePropertyOrientation(rawValue: UInt32(orientation)) else { return }
-        let handler = VNImageRequestHandler(ciImage: inputImage, orientation: cgImageOrientation)
+        let handler = VNImageRequestHandler(ciImage: inputImage, orientation: .up)
         rectangleQueue.async {
             try? handler.perform([self.rectanglesRequest])
         }
@@ -47,7 +41,7 @@ class DetectionUtility: NSObject {
         let topRight = detectedRectangle.topRight.scaled(to: imageSize)
         let bottomLeft = detectedRectangle.bottomLeft.scaled(to: imageSize)
         let bottomRight = detectedRectangle.bottomRight.scaled(to: imageSize)
-        let correctedImage = inputImage
+        var correctedImage = inputImage
             .cropped(to: boundingBox)
             .applyingFilter("CIPerspectiveCorrection", parameters: [
                 "inputTopLeft": CIVector(cgPoint: topLeft),
@@ -56,8 +50,11 @@ class DetectionUtility: NSObject {
                 "inputBottomRight": CIVector(cgPoint: bottomRight)
                 ])
         
+        correctedImage = correctedImage.oriented(forExifOrientation: Int32(CGImagePropertyOrientation.right.rawValue))
         DispatchQueue.main.async {
-            self.delegate?.imageDidDetected(correctedImage, at: boundingBox)
+            self.delegate?.didDetectImage(correctedImage, at: boundingBox)
         }
     }
 }
+
+

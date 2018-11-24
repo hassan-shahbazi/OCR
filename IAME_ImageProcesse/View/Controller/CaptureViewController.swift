@@ -11,7 +11,7 @@ import Foundation
 import AVFoundation
 import Vision
 
-let debugMode = true
+let debugMode = false
 
 class CaptureViewController: UIViewController {
     private var bufferSize: CGSize = .zero
@@ -22,9 +22,12 @@ class CaptureViewController: UIViewController {
     private let cancelButton = CircleButton()
     private var scanArea: ScanView!
     private var imgView: UIImageView!
-    private var capturedImage: CIImage!
+    private var capturedImage: UIImage!
     private let detection = DetectionUtility()
     private let ocrUtility = OCRUtility()
+    
+    private var extractedTextError: Error?
+    private var extractedTextBlocks: [String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +44,18 @@ class CaptureViewController: UIViewController {
         captureSession.startRunning()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        captureSession.stopRunning()
+    }
+    
     private func initiateCaptureSession() {
         guard let device = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back).devices.first else { return }
         guard let input = try? AVCaptureDeviceInput(device: device) else { return }
 
         captureSession.beginConfiguration()
-        captureSession.sessionPreset = .vga640x480
+        captureSession.sessionPreset = .hd1920x1080
         if captureSession.canAddInput(input) { captureSession.addInput(input) }
         if captureSession.canAddOutput(videoDataOutput) {
             captureSession.addOutput(videoDataOutput)
@@ -121,6 +130,7 @@ class CaptureViewController: UIViewController {
         let point = CGPoint(x: 0, y: view.frame.height - 100)
         let size = CGSize(width: 100, height: 100)
         imgView = UIImageView(frame: CGRect(origin: point, size: size))
+        imgView.contentMode = .scaleAspectFit
         
         view.addSubview(imgView)
     }
@@ -139,10 +149,10 @@ class CaptureViewController: UIViewController {
         cancelButton.setBackgroundImage(UIImage(named: "camera_button_off"), for: .normal)
         cancelButton.setImage(UIImage(named: "loading_card"), for: .normal)
         cancelButton.rotateButton()
-
-        let context = CIContext()
-        let cgImage = context.createCGImage(capturedImage, from: capturedImage.extent)
-        ocrUtility.detectText(image: UIImage(cgImage: cgImage!))
+        ocrUtility.detectText(image: capturedImage) { (error, blocks) in
+            self.extractedTextError = error
+            self.extractedTextBlocks = blocks
+        }
     }
 }
 
@@ -179,8 +189,8 @@ extension CaptureViewController {
     }
     
     private func getAcceptanceArea() -> CGRect {
-        let point = CGPoint(x: 135.0, y: 65.0)
-        let size = CGSize(width: 200.0, height: 325.0)
+        let point = CGPoint(x: 460.0, y: 40.0)
+        let size = CGSize(width: 620.0, height: 1010.0)
         
         return CGRect(origin: point, size: size)
     }
@@ -195,20 +205,23 @@ extension CaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate  {
 }
 
 extension CaptureViewController: DetectionUtilityDelegate {
-    func imageDidDetected(_ image: CIImage, at rect: CGRect) {
-        self.capturedImage = image
+    func didDetectImage(_ image: CIImage, at rect: CGRect) {
+        let context = CIContext()
+        let cgImage = context.createCGImage(image, from: image.extent)
+        self.capturedImage = UIImage(cgImage: cgImage!)
+        
         self.updateScanArea(self.scannedImageIsInAcceptanceArea(rect))
-        if debugMode { self.imgView.image = UIImage(ciImage: image) }
+        if debugMode { self.imgView.image = capturedImage }
     }
     
     private func scannedImageIsInAcceptanceArea(_ scannedArea: CGRect) -> Bool {
         let acceptanceArea = self.getAcceptanceArea()
         
-        let xDiff = abs(acceptanceArea.origin.x - scannedArea.origin.x)
-        let yDiff = abs(acceptanceArea.origin.y - scannedArea.origin.y)
-        let widthDiff = abs(acceptanceArea.width - scannedArea.width)
-        let heightDiff = abs(acceptanceArea.height - scannedArea.height)
+        let xDiff = (scannedArea.origin.x * 100) / acceptanceArea.origin.x
+        let yDiff = (scannedArea.origin.y * 100) / acceptanceArea.origin.y
+        let widthDiff = (scannedArea.width * 100) / acceptanceArea.width
+        let heightDiff = (scannedArea.height * 100) / acceptanceArea.height
         
-        return (xDiff <= 50.0) && (yDiff <= 50.0) && (widthDiff <= 50.0) && (heightDiff <= 50.0)
+        return (xDiff >= 80.0) && (yDiff >= 80.0) && (widthDiff >= 80.0) && (heightDiff >= 80.0)
     }
 }
