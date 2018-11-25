@@ -29,6 +29,9 @@
 		17B3365321A821E000C987DA /* OCR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17B3365221A821E000C987DA /* OCR.mlmodel */; };
 		17B3365521A8230800C987DA /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3365421A8230800C987DA /* ImageUtils.swift */; };
 		17B3365721A834DE00C987DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17B3365621A834DE00C987DA /* GoogleService-Info.plist */; };
+		17DE081421AA632A0033E95D /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081321AA632A0033E95D /* ShowInfoViewController.swift */; };
+		17DE081621AA66B40033E95D /* CaptureErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081521AA66B40033E95D /* CaptureErrorViewController.swift */; };
+		17DE081821AA66F60033E95D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081721AA66F60033E95D /* RoundedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		17B3365221A821E000C987DA /* OCR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = OCR.mlmodel; sourceTree = "<group>"; };
 		17B3365421A8230800C987DA /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		17B3365621A834DE00C987DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		17DE081321AA632A0033E95D /* ShowInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoViewController.swift; sourceTree = "<group>"; };
+		17DE081521AA66B40033E95D /* CaptureErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureErrorViewController.swift; sourceTree = "<group>"; };
+		17DE081721AA66F60033E95D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2DC12C39D9C72F1551453B4C /* Pods-IAME_ImageProcesse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE9828330097BBC41A30E83 /* Pods-IAME_ImageProcesse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.release.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.release.xcconfig"; sourceTree = "<group>"; };
 		E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAME_ImageProcesse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +165,8 @@
 			children = (
 				17B3360421A6D4B600C987DA /* HomeViewController.swift */,
 				17B3360A21A6DEA300C987DA /* CaptureViewController.swift */,
+				17DE081321AA632A0033E95D /* ShowInfoViewController.swift */,
+				17DE081521AA66B40033E95D /* CaptureErrorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 				17B3360E21A7334300C987DA /* StatementLabel.swift */,
 				17B3361021A7341E00C987DA /* ScanView.swift */,
 				17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */,
+				17DE081721AA66F60033E95D /* RoundedButton.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -367,12 +376,15 @@
 				17B3361121A7341E00C987DA /* ScanView.swift in Sources */,
 				17B3360721A6D4CD00C987DA /* CircleButton.swift in Sources */,
 				17B335FB21A68ED200C987DA /* IAME.xcdatamodeld in Sources */,
+				17DE081821AA66F60033E95D /* RoundedButton.swift in Sources */,
 				179A6BA121A681CB001773D6 /* AppDelegate.swift in Sources */,
 				17B335FF21A6929900C987DA /* HistoryModel.swift in Sources */,
+				17DE081621AA66B40033E95D /* CaptureErrorViewController.swift in Sources */,
 				17B335F721A68E9700C987DA /* DatabaseInstance.swift in Sources */,
 				17B3365521A8230800C987DA /* ImageUtils.swift in Sources */,
 				17B3360B21A6DEA300C987DA /* CaptureViewController.swift in Sources */,
 				17B3365321A821E000C987DA /* OCR.mlmodel in Sources */,
+				17DE081421AA632A0033E95D /* ShowInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +535,7 @@
 				DEVELOPMENT_TEAM = 92TDT63R6P;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/IAME_ImageProcesse/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,6 +556,7 @@
 				DEVELOPMENT_TEAM = 92TDT63R6P;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/IAME_ImageProcesse/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -109,7 +109,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="IAME" id="Wxx-KO-FbL">
-                        <barButtonItem key="backBarButtonItem" title="History" id="e7d-Ur-o6a"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="e7d-Ur-o6a"/>
                     </navigationItem>
                     <connections>
                         <segue destination="zix-jy-Ymq" kind="show" identifier="capture" id="o3M-7T-3W0"/>
@@ -129,11 +129,122 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="geZ-Gd-Ua9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scan ID Card" id="Skg-xk-iT2"/>
+                    <navigationItem key="navigationItem" title="Scan ID Card" id="Skg-xk-iT2">
+                        <barButtonItem key="backBarButtonItem" title=" " id="F4e-Xz-0Hk"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="NNx-IB-UQa" kind="show" identifier="showInfo" id="Zp4-wc-8eK"/>
+                        <segue destination="FRc-BL-CIj" kind="show" identifier="showError" id="r4A-qN-LQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xT0-Lx-Wdf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1783" y="134"/>
+        </scene>
+        <!--ID Card-->
+        <scene sceneID="QsA-vT-5bM">
+            <objects>
+                <viewController id="FRc-BL-CIj" customClass="CaptureErrorViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VHz-G1-Bb0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuz-6I-ro5" customClass="ScanView" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                                <rect key="frame" x="12" y="88" width="351" height="240"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4B-Ga-qHE">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="240"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="g4B-Ga-qHE" secondAttribute="trailing" id="QYx-WJ-txO"/>
+                                    <constraint firstAttribute="bottom" secondItem="g4B-Ga-qHE" secondAttribute="bottom" id="WYo-xZ-dWW"/>
+                                    <constraint firstAttribute="height" constant="240" id="Z6K-jc-wKh"/>
+                                    <constraint firstItem="g4B-Ga-qHE" firstAttribute="top" secondItem="uuz-6I-ro5" secondAttribute="top" id="aBr-rn-qOQ"/>
+                                    <constraint firstItem="g4B-Ga-qHE" firstAttribute="leading" secondItem="uuz-6I-ro5" secondAttribute="leading" id="cg3-i1-48a"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gv-a5-Chd">
+                                <rect key="frame" x="0.0" y="336" width="375" height="2"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.29803921570000003" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="DsV-Bd-FqZ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID Card Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t5d-Sx-ToF">
+                                <rect key="frame" x="125" y="354" width="125" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Xh0-hG-VTE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There was an error reading your ID card. Please make sure that the document is correctly positioned." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCm-QR-cGl">
+                                <rect key="frame" x="16" y="398" width="343" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1a-QM-MUi" customClass="RoundedButton" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                                <rect key="frame" x="67.5" y="593" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.26290398836135864" green="0.69194447994232178" blue="0.36213743686676025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="CTj-ky-GbR"/>
+                                    <constraint firstAttribute="height" constant="50" id="PeE-Sp-iJZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="RE-TAKE ID CARD PHOTO">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="retakeThePhoto:" destination="FRc-BL-CIj" eventType="touchUpInside" id="0bY-dl-zTl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t5d-Sx-ToF" firstAttribute="centerX" secondItem="tld-UX-eNI" secondAttribute="centerX" id="HgC-QP-gJh"/>
+                            <constraint firstItem="7Gv-a5-Chd" firstAttribute="top" secondItem="uuz-6I-ro5" secondAttribute="bottom" constant="8" id="JcC-7V-wiU"/>
+                            <constraint firstItem="m1a-QM-MUi" firstAttribute="centerX" secondItem="tld-UX-eNI" secondAttribute="centerX" id="MfG-qo-Ce3"/>
+                            <constraint firstItem="tld-UX-eNI" firstAttribute="trailing" secondItem="NCm-QR-cGl" secondAttribute="trailing" constant="16" id="Tmm-E2-hYt"/>
+                            <constraint firstItem="NCm-QR-cGl" firstAttribute="top" secondItem="t5d-Sx-ToF" secondAttribute="bottom" constant="20" id="XgF-FK-t0j"/>
+                            <constraint firstItem="tld-UX-eNI" firstAttribute="trailing" secondItem="7Gv-a5-Chd" secondAttribute="trailing" id="bab-IY-F8c"/>
+                            <constraint firstItem="NCm-QR-cGl" firstAttribute="leading" secondItem="tld-UX-eNI" secondAttribute="leading" constant="16" id="cm8-mV-Yq4"/>
+                            <constraint firstItem="tld-UX-eNI" firstAttribute="bottom" secondItem="m1a-QM-MUi" secondAttribute="bottom" constant="24" id="dSU-yS-9rZ"/>
+                            <constraint firstItem="uuz-6I-ro5" firstAttribute="top" secondItem="tld-UX-eNI" secondAttribute="top" constant="24" id="eIc-po-uOa"/>
+                            <constraint firstItem="tld-UX-eNI" firstAttribute="trailing" secondItem="uuz-6I-ro5" secondAttribute="trailing" constant="12" id="hlx-wf-GdR"/>
+                            <constraint firstItem="7Gv-a5-Chd" firstAttribute="leading" secondItem="tld-UX-eNI" secondAttribute="leading" id="kMS-lW-5NV"/>
+                            <constraint firstItem="uuz-6I-ro5" firstAttribute="leading" secondItem="tld-UX-eNI" secondAttribute="leading" constant="12" id="mq6-Wc-I4e"/>
+                            <constraint firstItem="t5d-Sx-ToF" firstAttribute="top" secondItem="7Gv-a5-Chd" secondAttribute="bottom" constant="16" id="p7f-TT-5OJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tld-UX-eNI"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ID Card" id="LTS-W3-ME2"/>
+                    <connections>
+                        <outlet property="captureImageView" destination="g4B-Ga-qHE" id="IIn-Wj-AwM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rl8-Fv-Pkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2565.5999999999999" y="530.28485757121439"/>
+        </scene>
+        <!--Show Info View Controller-->
+        <scene sceneID="aqo-1q-kG1">
+            <objects>
+                <viewController id="NNx-IB-UQa" customClass="ShowInfoViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xoZ-y3-cSu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jf4-XB-eUj"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POV-FV-Ext" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2567" y="-237"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dus-hH-v0f">

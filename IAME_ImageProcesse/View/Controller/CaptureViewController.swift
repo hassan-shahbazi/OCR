@@ -14,20 +14,35 @@ import Vision
 let debugMode = false
 
 class CaptureViewController: UIViewController {
+    //Video Capture
     private var bufferSize: CGSize = .zero
     private let videoDataOutputQueue = DispatchQueue(label: "videoDataOutputQueue", qos: .userInitiated, attributes: [], autoreleaseFrequency: .workItem)
     private let captureSession = AVCaptureSession()
     private let videoDataOutput = AVCaptureVideoDataOutput()
     private var videoPreviewLayer: AVCaptureVideoPreviewLayer?
+    
+    //View outlets
     private let cancelButton = CircleButton()
     private var scanArea: ScanView!
     private var imgView: UIImageView!
-    private var capturedImage: UIImage!
+    
+    //Utilities
     private let detection = DetectionUtility()
     private let ocrUtility = OCRUtility()
     
-    private var extractedTextError: Error?
-    private var extractedTextBlocks: [String]?
+    //Capture result
+    private var capturedImage: UIImage!
+    private var extractedTextError: Error? {
+        didSet {
+            self.performSegue(withIdentifier: "showError", sender: self)
+        }
+    }
+    private var extractedTextBlocks: [String]? {
+        didSet {
+            if debugMode { print("extracted blocks: \(extractedTextBlocks!)") }
+            self.performSegue(withIdentifier: "showInfo", sender: self)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +53,14 @@ class CaptureViewController: UIViewController {
         initaiteScanArea()
         
         initiateStatement()
-        initiateButton()
         if debugMode { initaiteThumbnail() }
         detection.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        initiateButton()
         captureSession.startRunning()
     }
     
@@ -121,6 +141,7 @@ class CaptureViewController: UIViewController {
     private func initiateButton() {
         cancelButton.frame = getButtonArea()
         cancelButton.setBackgroundImage(UIImage(named: "camera_button_off"), for: .normal)
+        cancelButton.setImage(nil, for: .normal)
         cancelButton.addTarget(self, action: #selector(self.analyzeCard), for:.touchUpInside)
         cancelButton.shapeButton()
         view.addSubview(cancelButton)
@@ -131,7 +152,7 @@ class CaptureViewController: UIViewController {
         let size = CGSize(width: 100, height: 100)
         imgView = UIImageView(frame: CGRect(origin: point, size: size))
         imgView.contentMode = .scaleAspectFit
-        
+
         view.addSubview(imgView)
     }
     
@@ -150,8 +171,14 @@ class CaptureViewController: UIViewController {
         cancelButton.setImage(UIImage(named: "loading_card"), for: .normal)
         cancelButton.rotateButton()
         ocrUtility.detectText(image: capturedImage) { (error, blocks) in
-            self.extractedTextError = error
-            self.extractedTextBlocks = blocks
+            if error != nil { self.extractedTextError = error }
+            else if blocks != nil { self.extractedTextBlocks = blocks }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CaptureErrorViewController {
+            destination.capturedImage = self.capturedImage
         }
     }
 }
@@ -191,7 +218,7 @@ extension CaptureViewController {
     private func getAcceptanceArea() -> CGRect {
         let point = CGPoint(x: 460.0, y: 40.0)
         let size = CGSize(width: 620.0, height: 1010.0)
-        
+
         return CGRect(origin: point, size: size)
     }
 }
