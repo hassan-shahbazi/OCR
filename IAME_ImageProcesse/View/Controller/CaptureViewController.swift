@@ -180,6 +180,9 @@ class CaptureViewController: UIViewController {
         if let destination = segue.destination as? CaptureErrorViewController {
             destination.capturedImage = self.capturedImage
         }
+        if let destination = segue.destination as? ShowInfoViewController {
+            destination.textBlocks = self.extractedTextBlocks
+        }
     }
 }
 
