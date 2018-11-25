@@ -12,7 +12,7 @@ class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var objectImage: UIImageView!
     @IBOutlet weak var objectName: UILabel!
-    @IBOutlet weak var objectNationality: UILabel!
+    @IBOutlet weak var objectDate: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,7 @@ class HistoryTableViewCell: UITableViewCell {
         
         self.objectImage.image = object.image
         self.objectName.text = (object.person?.firstName ?? "") + " " + (object.person?.sureName ?? "")
-        self.objectNationality.text = object.person?.nationaliy
+        self.objectDate.text = Utility.getString(from: object.date ?? Date())
     }
 
 }

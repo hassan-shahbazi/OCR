@@ -10,13 +10,16 @@ import UIKit
 
 class ShowInfoViewController: UIViewController {
     public var textBlocks: [String]!
+    public var capturedImage: UIImage!
     private var textBlocksExtracted: Dictionary<String,String> = [:]
     private var sectionHeaders: [String] {
         return ["Surname", "First Name", "Surname at Birth", "ID Number", "Date of Birth", "Gender", "Signature", "Nationality"]
     }
     private var sectionHeadersCopy: [String]!
+    private let viewModel = HistoryViewModel()
     
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var saveBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +32,7 @@ class ShowInfoViewController: UIViewController {
         
         initiateView()
     }
-    
+        
     private func initiateView() {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.table.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 70, right: 0)
@@ -41,11 +44,11 @@ class ShowInfoViewController: UIViewController {
             let text = textBlocks[counter]
             if let relatedSection = getRelatedSection(text) {
                 let value = text.components(separatedBy: relatedSection)
-                textBlocksExtracted[relatedSection] = value.last
+                textBlocksExtracted[relatedSection.lowercased()] = value[1]
             }
             else if text.lowercased().contains("republic") {
                 sectionHeadersCopy.removeAll(where: { $0 == "Nationality" })
-                textBlocksExtracted["Nationality"] = text
+                textBlocksExtracted["Nationality".lowercased()] = text
             }
         }
         self.table.reloadData()
@@ -66,8 +69,14 @@ class ShowInfoViewController: UIViewController {
     }
     
     @IBAction func saveContinue(_ sender: UIButton) {
-        //save to db
-        self.navigationController?.popToRootViewController(animated: true)
+        viewModel.saveNewPerson(data: textBlocksExtracted, image: capturedImage) { (succeed: Bool?) in
+            if let _ = succeed {
+                self.navigationController?.popToRootViewController(animated: true)
+                return
+            }
+            self.saveBtn.backgroundColor = #colorLiteral(red: 0.8823529412, green: 0.2980392157, blue: 0.2745098039, alpha: 1)
+            self.saveBtn.setTitle("Save failed", for: .normal)
+        }
     }
 }
 
@@ -83,7 +92,7 @@ extension ShowInfoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = table.dequeueReusableCell(withIdentifier: "result_cell") else { return UITableViewCell() }
         
-        let currentSection = sectionHeaders[indexPath.section]
+        let currentSection = sectionHeaders[indexPath.section].lowercased()
         cell.textLabel?.text = textBlocksExtracted[currentSection]
         
         return cell

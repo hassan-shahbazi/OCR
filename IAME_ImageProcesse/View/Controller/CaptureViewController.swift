@@ -11,7 +11,7 @@ import Foundation
 import AVFoundation
 import Vision
 
-let debugMode = false
+let debugMode = true
 
 class CaptureViewController: UIViewController {
     //Video Capture
@@ -182,6 +182,7 @@ class CaptureViewController: UIViewController {
         }
         if let destination = segue.destination as? ShowInfoViewController {
             destination.textBlocks = self.extractedTextBlocks
+            destination.capturedImage = self.capturedImage
         }
     }
 }

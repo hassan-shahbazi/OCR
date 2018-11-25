@@ -10,11 +10,14 @@ import UIKit
 import CoreData
 
 class PersonObject: NSObject {
+    var idNumber:   String?
     var firstName:  String?
     var sureName:   String?
+    var sureNameBirthDate: String?
     var birthdate:  Date?
     var gender:     Gender?
-    var nationaliy: String?
+    var signature:  String?
+    var nationality:String?
 }
 
 class HistoryObject: NSObject {
@@ -26,36 +29,50 @@ class HistoryObject: NSObject {
 
 class HistoryManagedObject: NSManagedObject {
     @NSManaged var id:  NSNumber?
+    @NSManaged var idNumber:   String?
     @NSManaged var firstName:  String?
     @NSManaged var sureName:   String?
+    @NSManaged var sureNameBirthDate: String?
     @NSManaged var birthdate:  Date?
     @NSManaged var gender:     String?
-    @NSManaged var nationaliy: String?
+    @NSManaged var signature:  String?
+    @NSManaged var nationality: String?
     @NSManaged var date:       Date?
     @NSManaged var image:      Data?
 }
 
 extension HistoryManagedObject {
     var object: HistoryObject {
+        let person = PersonObject()
+        person.idNumber = self.idNumber
+        person.firstName = self.firstName
+        person.sureName = self.sureName
+        person.sureNameBirthDate = self.sureNameBirthDate
+        person.birthdate = self.birthdate
+        if let gndr = self.gender { person.gender = Gender(rawValue: gndr) }
+        person.signature = self.signature
+        person.nationality = self.nationality
+        
         let object = HistoryObject()
         object.id = self.id?.intValue
-        object.person?.firstName = self.firstName
-        object.person?.sureName = self.sureName
-        object.person?.birthdate = self.birthdate
-        if let gndr = self.gender { object.person?.gender = Gender(rawValue: gndr) }
-        object.person?.nationaliy = self.nationaliy
-        
+        object.person = person
         object.date = self.date
-        DispatchQueue.global().async {
-            if let img = self.image { object.image = UIImage(data: img) }
-        }
+        if let img = self.image { object.image = UIImage(data: img) }
         
         return object
     }
 }
 
 enum Gender: String {
-    case Male   = "Male"
-    case Female = "Female"
+    case Male   = "M"
+    case Female = "F"
     case X      = "X"
+    
+    var description: String {
+        switch self {
+            case .Male: return "Male"
+            case .Female: return "Female"
+            case .X: return "X"
+        }
+    }
 }

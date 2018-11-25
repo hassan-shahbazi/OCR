@@ -40,3 +40,18 @@ extension CGImagePropertyOrientation {
     }
 }
 
+class Utility: NSObject {
+    public class func getDate(from str: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(identifier: "GMT")
+        formatter.dateFormat = "d MMM yyyy"
+        return formatter.date(from: str) ?? Date()
+    }
+    
+    public class func getString(from date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.timeZone = TimeZone(identifier: "GMT")
+        formatter.dateFormat = "d MMM, yyyy"
+        return formatter.string(from: date)
+    }
+}

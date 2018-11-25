@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--IAME-->
+        <!--ID Card Scanner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="image_cell" rowHeight="88" id="Wsr-d9-vBM" customClass="HistoryTableViewCell" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="history_cell" rowHeight="88" id="Wsr-d9-vBM" customClass="HistoryTableViewCell" customModule="IAME_ImageProcesse" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wsr-d9-vBM" id="kYV-p3-7iJ">
@@ -68,9 +68,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="objectDate" destination="Tbq-HI-L9M" id="BAj-me-vE7"/>
                                             <outlet property="objectImage" destination="fqp-Wn-GQj" id="ORH-Jb-I8c"/>
                                             <outlet property="objectName" destination="7wf-eX-iNP" id="PGY-JM-yH9"/>
-                                            <outlet property="objectNationality" destination="Tbq-HI-L9M" id="BAj-me-vE7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -108,10 +108,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="IAME" id="Wxx-KO-FbL">
+                    <navigationItem key="navigationItem" title="ID Card Scanner" id="Wxx-KO-FbL">
                         <barButtonItem key="backBarButtonItem" title=" " id="e7d-Ur-o6a"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="table" destination="7iq-El-AyH" id="P2u-04-wyl"/>
                         <segue destination="zix-jy-Ymq" kind="show" identifier="capture" id="o3M-7T-3W0"/>
                     </connections>
                 </viewController>
@@ -243,7 +244,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="70"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="result_cell" id="dcT-kc-sRE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="result_cell" id="dcT-kc-sRE">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dcT-kc-sRE" id="Js3-fe-Lpj">
@@ -336,6 +337,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="saveBtn" destination="7Rj-Wq-GbN" id="yME-8q-DbU"/>
                         <outlet property="table" destination="a2Y-jC-AbU" id="eS9-jO-4gg"/>
                     </connections>
                 </viewController>

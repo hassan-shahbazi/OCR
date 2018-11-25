@@ -24,11 +24,15 @@ class DatabaseManager: NSObject {
     public class func saveNewObject(object: PersonObject, image: UIImage) -> Bool {
         guard let newObject = NSEntityDescription.insertNewObject(forEntityName: "HistoryEntity", into: managedContext) as? HistoryManagedObject else { return false }
         newObject.id = getNewID()
+        
+        newObject.idNumber = object.idNumber
         newObject.firstName = object.firstName
         newObject.sureName = object.sureName
+        newObject.sureNameBirthDate = object.sureNameBirthDate
         newObject.gender = object.gender?.rawValue
         newObject.birthdate = object.birthdate
-        newObject.nationaliy = object.nationaliy
+        newObject.signature = object.signature
+        newObject.nationality = object.nationality
         
         newObject.image = image.pngData()
         newObject.date = getDate()
@@ -49,7 +53,8 @@ class DatabaseManager: NSObject {
     
     private class func getDate() -> Date {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.timeZone = TimeZone(identifier: "GMT")
+        formatter.dateFormat = "d MMM, yyyy"
         
         let dateStr = formatter.string(from: Date())
         return formatter.date(from: dateStr) ?? Date()

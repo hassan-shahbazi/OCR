@@ -11,15 +11,26 @@ import UIKit
 class HomeViewController: UIViewController {
     private let viewModel = HistoryViewModel()
     private var history: [HistoryObject]?
+    @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        self.loadHistory()
+        initiateView()
+        loadHistory()
+    }
+    
+    private func initiateView() {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     private func loadHistory() {
         history = viewModel.getHistory()
+        table.reloadData()
     }
     
     @IBAction func captureButton(_ sender: UIButton) {
@@ -33,7 +44,7 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "hisotry_cell") as? HistoryTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "history_cell") as? HistoryTableViewCell else { return UITableViewCell() }
         cell.setup(history?[indexPath.row])
         
         return cell
