@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     private let viewModel = HistoryViewModel()
     private var history: [HistoryObject]?
+    private var selectedItem: HistoryObject!
     @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
@@ -36,6 +37,12 @@ class HomeViewController: UIViewController {
     @IBAction func captureButton(_ sender: UIButton) {
         performSegue(withIdentifier: "capture", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? ShowCardInformationViewController {
+            destination.item = selectedItem
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -48,5 +55,14 @@ extension HomeViewController: UITableViewDataSource {
         cell.setup(history?[indexPath.row])
         
         return cell
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.selectedItem = history?[indexPath.row]
+        performSegue(withIdentifier: "show", sender: self)
     }
 }

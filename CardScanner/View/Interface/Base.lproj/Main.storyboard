@@ -13,7 +13,7 @@
         <!--ID Card Scanner-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="CardScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="history_cell" rowHeight="88" id="Wsr-d9-vBM" customClass="HistoryTableViewCell" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="history_cell" rowHeight="88" id="Wsr-d9-vBM" customClass="HistoryTableViewCell" customModule="CardScanner" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wsr-d9-vBM" id="kYV-p3-7iJ">
@@ -79,7 +79,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vDy-45-prx"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTI-Vx-hgi" customClass="CircleButton" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTI-Vx-hgi" customClass="CircleButton" customModule="CardScanner" customModuleProvider="target">
                                 <rect key="frame" x="309" y="601" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -114,16 +114,86 @@
                     <connections>
                         <outlet property="table" destination="7iq-El-AyH" id="P2u-04-wyl"/>
                         <segue destination="zix-jy-Ymq" kind="show" identifier="capture" id="o3M-7T-3W0"/>
+                        <segue destination="00g-Gs-HLZ" kind="show" identifier="show" id="aMr-ao-3FY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="133.5832083958021"/>
         </scene>
+        <!--Card Information-->
+        <scene sceneID="Sct-kj-vfp">
+            <objects>
+                <viewController id="00g-Gs-HLZ" customClass="ShowCardInformationViewController" customModule="CardScanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ln-84-409">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="inc-vr-zsd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="70"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="image_cell" rowHeight="128" id="88C-dF-hbx" customClass="ShowInfoImageTableViewCell" customModule="CardScanner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="88C-dF-hbx" id="vZA-rc-eWo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="127.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mVb-SU-zXG">
+                                                    <rect key="frame" x="8" y="8" width="359" height="111.5"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="mVb-SU-zXG" firstAttribute="leading" secondItem="vZA-rc-eWo" secondAttribute="leading" constant="8" id="OaV-US-s27"/>
+                                                <constraint firstItem="mVb-SU-zXG" firstAttribute="top" secondItem="vZA-rc-eWo" secondAttribute="top" constant="8" id="PPe-Fc-Uon"/>
+                                                <constraint firstAttribute="bottom" secondItem="mVb-SU-zXG" secondAttribute="bottom" constant="8" id="gMo-8G-V1g"/>
+                                                <constraint firstAttribute="trailing" secondItem="mVb-SU-zXG" secondAttribute="trailing" constant="8" id="qSV-es-IB4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="userCard" destination="mVb-SU-zXG" id="JVX-hS-4RI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="info_cell" id="jdM-eK-Uct">
+                                        <rect key="frame" x="0.0" y="183.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jdM-eK-Uct" id="RvX-Ln-zdJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="00g-Gs-HLZ" id="RNB-k4-Xeg"/>
+                                    <outlet property="delegate" destination="00g-Gs-HLZ" id="Rtx-3Z-Q0a"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="inc-vr-zsd" firstAttribute="leading" secondItem="MyE-ae-7V8" secondAttribute="leading" id="RxT-c2-jF4"/>
+                            <constraint firstItem="inc-vr-zsd" firstAttribute="trailing" secondItem="MyE-ae-7V8" secondAttribute="trailing" id="Xt3-ou-iVi"/>
+                            <constraint firstItem="inc-vr-zsd" firstAttribute="top" secondItem="MyE-ae-7V8" secondAttribute="top" id="dwU-s1-LfJ"/>
+                            <constraint firstItem="MyE-ae-7V8" firstAttribute="bottom" secondItem="inc-vr-zsd" secondAttribute="bottom" id="nvv-FV-c7Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MyE-ae-7V8"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Card Information" id="XAx-0e-U1I"/>
+                    <connections>
+                        <outlet property="tableView" destination="inc-vr-zsd" id="tmT-BA-mko"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOC-8u-ace" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984.79999999999995" y="850.52473763118451"/>
+        </scene>
         <!--Scan ID Card-->
         <scene sceneID="9xQ-sH-xBW">
             <objects>
-                <viewController id="zix-jy-Ymq" customClass="CaptureViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zix-jy-Ymq" customClass="CaptureViewController" customModule="CardScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gmz-6d-jIY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,12 +215,12 @@
         <!--ID Card-->
         <scene sceneID="QsA-vT-5bM">
             <objects>
-                <viewController id="FRc-BL-CIj" customClass="CaptureErrorViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FRc-BL-CIj" customClass="CaptureErrorViewController" customModule="CardScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VHz-G1-Bb0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuz-6I-ro5" customClass="ScanView" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uuz-6I-ro5" customClass="ScanView" customModule="CardScanner" customModuleProvider="target">
                                 <rect key="frame" x="12" y="88" width="351" height="240"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g4B-Ga-qHE">
@@ -188,7 +258,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1a-QM-MUi" customClass="RoundedButton" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1a-QM-MUi" customClass="RoundedButton" customModule="CardScanner" customModuleProvider="target">
                                 <rect key="frame" x="67.5" y="593" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.26290398836135864" green="0.69194447994232178" blue="0.36213743686676025" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -234,7 +304,7 @@
         <!--Show Info View Controller-->
         <scene sceneID="aqo-1q-kG1">
             <objects>
-                <viewController id="NNx-IB-UQa" customClass="ShowInfoViewController" customModule="IAME_ImageProcesse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NNx-IB-UQa" customClass="ShowInfoViewController" customModule="CardScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xoZ-y3-cSu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -244,7 +314,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="70"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="result_cell" id="dcT-kc-sRE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="result_cell" id="dcT-kc-sRE">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dcT-kc-sRE" id="Js3-fe-Lpj">
@@ -295,7 +365,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFf-mG-3Lf">
                                 <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rj-Wq-GbN" customClass="RoundedButton" customModule="IAME_ImageProcesse" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rj-Wq-GbN" customClass="RoundedButton" customModule="CardScanner" customModuleProvider="target">
                                         <rect key="frame" x="67.5" y="10" width="240" height="50"/>
                                         <color key="backgroundColor" red="0.26290398840000001" green="0.69194447989999996" blue="0.3621374369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

@@ -32,6 +32,8 @@
 		84D7970721B7F56D00C6A9FE /* CardScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F921A68ED200C987DA /* CardScanner.xcdatamodeld */; };
 		84D7970921B7F5F400C6A9FE /* FaceDetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970821B7F5F400C6A9FE /* FaceDetectionUtility.swift */; };
 		84D7970B21B7FB7200C6A9FE /* DetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970A21B7FB7200C6A9FE /* DetectionUtility.swift */; };
+		84D7970D21B8051100C6A9FE /* ShowInfoImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970C21B8051100C6A9FE /* ShowInfoImageTableViewCell.swift */; };
+		84D7970F21B805C800C6A9FE /* ShowCardInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970E21B805C800C6A9FE /* ShowCardInformationViewController.swift */; };
 		D4A41D9822F2A7991BE0E4E7 /* Pods_CardScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BFC8A07B44F69B7CF2F46C /* Pods_CardScanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		84D7970521B7F45B00C6A9FE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84D7970821B7F5F400C6A9FE /* FaceDetectionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionUtility.swift; sourceTree = "<group>"; };
 		84D7970A21B7FB7200C6A9FE /* DetectionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionUtility.swift; sourceTree = "<group>"; };
+		84D7970C21B8051100C6A9FE /* ShowInfoImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoImageTableViewCell.swift; sourceTree = "<group>"; };
+		84D7970E21B805C800C6A9FE /* ShowCardInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCardInformationViewController.swift; sourceTree = "<group>"; };
 		CA6329285AD522E0A2B9528F /* Pods-CardScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.release.xcconfig"; sourceTree = "<group>"; };
 		DD253C0EF51AB2DC49CE3EA1 /* Pods-CardScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAME_ImageProcesse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +177,7 @@
 				17B3360A21A6DEA300C987DA /* CaptureViewController.swift */,
 				17DE081321AA632A0033E95D /* ShowInfoViewController.swift */,
 				17DE081521AA66B40033E95D /* CaptureErrorViewController.swift */,
+				84D7970E21B805C800C6A9FE /* ShowCardInformationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				17B3361021A7341E00C987DA /* ScanView.swift */,
 				17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */,
 				17DE081721AA66F60033E95D /* RoundedButton.swift */,
+				84D7970C21B8051100C6A9FE /* ShowInfoImageTableViewCell.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -378,6 +384,7 @@
 			files = (
 				84D796F421B7F43D00C6A9FE /* AppDelegate.swift in Sources */,
 				84D796F521B7F43D00C6A9FE /* CircleButton.swift in Sources */,
+				84D7970F21B805C800C6A9FE /* ShowCardInformationViewController.swift in Sources */,
 				84D796F621B7F43D00C6A9FE /* StatementLabel.swift in Sources */,
 				84D796F721B7F43D00C6A9FE /* ScanView.swift in Sources */,
 				84D796F821B7F43D00C6A9FE /* HistoryTableViewCell.swift in Sources */,
@@ -388,6 +395,7 @@
 				84D796FC21B7F43D00C6A9FE /* CaptureErrorViewController.swift in Sources */,
 				84D796FD21B7F43D00C6A9FE /* HistoryViewModel.swift in Sources */,
 				84D7970921B7F5F400C6A9FE /* FaceDetectionUtility.swift in Sources */,
+				84D7970D21B8051100C6A9FE /* ShowInfoImageTableViewCell.swift in Sources */,
 				84D796FE21B7F43D00C6A9FE /* DatabaseManager.swift in Sources */,
 				84D796FF21B7F43D00C6A9FE /* HistoryModel.swift in Sources */,
 				84D7970721B7F56D00C6A9FE /* CardScanner.xcdatamodeld in Sources */,
