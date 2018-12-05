@@ -61,7 +61,6 @@
 		17B3361B21A8165700C987DA /* OCRSlicer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OCRSlicer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B3361D21A8165A00C987DA /* TesseractOCR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B3362621A816B100C987DA /* Pods_IAME_ImageProcesse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_IAME_ImageProcesse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		17B3365221A821E000C987DA /* OCR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = OCR.mlmodel; sourceTree = "<group>"; };
 		17B3365421A8230800C987DA /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		17B3365621A834DE00C987DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17DE081321AA632A0033E95D /* ShowInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +162,6 @@
 		179A6BB621A68208001773D6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				17B3365221A821E000C987DA /* OCR.mlmodel */,
 				179A6BA721A681CE001773D6 /* Assets.xcassets */,
 				179A6BAC21A681CE001773D6 /* Info.plist */,
 			);
