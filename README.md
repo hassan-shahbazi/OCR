@@ -9,8 +9,7 @@ A sample *Mauritius ID Card* is availabe under the [Resources](https://github.co
 You will find detection functionallities under the **Utility** folder: [DetectionUtility.swift](https://github.com/Hassaniiii/OCR/blob/master/CardScanner/Utility/DetectionUtility.swift), [FaceDetectionUtility.swift](https://github.com/Hassaniiii/OCR/blob/master/CardScanner/Utility/FaceDetectionUtility.swift), and [CardDetectionUtility.swift](https://github.com/Hassaniiii/OCR/blob/master/CardScanner/Utility/CardDetectionUtility.swift).
 
 ## Demo
-
-![](demo.gif)
+You will find a demo from the application here: [demo](https://github.com/Hassaniiii/OCR/blob/master/demo.gif)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/Hassaniiii/OCR/blob/master/LICENSE.md) file for details
