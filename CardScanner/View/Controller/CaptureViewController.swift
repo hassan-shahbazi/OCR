@@ -26,9 +26,11 @@ class CaptureViewController: UIViewController {
     private var scanArea: ScanView!
     private var imgView: UIImageView!
     
-    //Utilities
-    private let detection = DetectionUtility()
+    //Card Utilities
+    private let cardDetection = CardDetectionUtility()
+    private let faceDetection = FaceDetectionUtility()
     private let ocrUtility = OCRUtility()
+    
     
     //Capture result
     private var capturedImage: UIImage!
@@ -54,7 +56,8 @@ class CaptureViewController: UIViewController {
         
         initiateStatement()
         if debugMode { initaiteThumbnail() }
-        detection.delegate = self
+        cardDetection.delegate = self
+        faceDetection.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -225,24 +228,28 @@ extension CaptureViewController {
 
         return CGRect(origin: point, size: size)
     }
+    
+    private func getUIImage(from ciImage: CIImage) -> UIImage {
+        let context = CIContext()
+        guard let cgImage = context.createCGImage(ciImage, from: ciImage.extent) else { return UIImage() }
+        return UIImage(cgImage: cgImage)
+    }
 }
 
 extension CaptureViewController: AVCaptureVideoDataOutputSampleBufferDelegate  {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
 
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        self.detection.detectRectangel(CIImage(cvPixelBuffer: pixelBuffer))
+        self.cardDetection.detect(CIImage(cvPixelBuffer: pixelBuffer))
     }
 }
 
-extension CaptureViewController: DetectionUtilityDelegate {
-    func didDetectImage(_ image: CIImage, at rect: CGRect) {
-        let context = CIContext()
-        let cgImage = context.createCGImage(image, from: image.extent)
-        self.capturedImage = UIImage(cgImage: cgImage!)
+extension CaptureViewController: CardDetectionUtilityDelegate {
+    func didDetectCardImage(_ image: CIImage, at rect: CGRect) {
+        self.scannedImageIsInAcceptanceArea(rect) ? self.faceDetection.detect(image) : self.updateScanArea(false)
+        self.capturedImage = self.getUIImage(from: image)
         
-        self.updateScanArea(self.scannedImageIsInAcceptanceArea(rect))
-        if debugMode { self.imgView.image = capturedImage }
+        if debugMode { self.imgView.image =  self.capturedImage }
     }
     
     private func scannedImageIsInAcceptanceArea(_ scannedArea: CGRect) -> Bool {
@@ -254,5 +261,11 @@ extension CaptureViewController: DetectionUtilityDelegate {
         let heightDiff = (scannedArea.height * 100) / acceptanceArea.height
         
         return (xDiff >= 80.0) && (yDiff >= 80.0) && (widthDiff >= 80.0) && (heightDiff >= 80.0)
+    }
+}
+
+extension CaptureViewController: FaceDetectionUtilityDelegate {
+    func didDetectFaceImage(_ image: CIImage, at rect: CGRect) {
+        updateScanArea(true)
     }
 }

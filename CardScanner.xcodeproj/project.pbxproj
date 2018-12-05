@@ -26,10 +26,12 @@
 		84D7970021B7F43D00C6A9FE /* DatabaseInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F621A68E9700C987DA /* DatabaseInstance.swift */; };
 		84D7970121B7F43D00C6A9FE /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3365421A8230800C987DA /* ImageUtils.swift */; };
 		84D7970221B7F43D00C6A9FE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361721A7EAEE00C987DA /* Utilities.swift */; };
-		84D7970321B7F43D00C6A9FE /* DetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361321A7E9FF00C987DA /* DetectionUtility.swift */; };
+		84D7970321B7F43D00C6A9FE /* CardDetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361321A7E9FF00C987DA /* CardDetectionUtility.swift */; };
 		84D7970421B7F43D00C6A9FE /* OCRUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361921A8000C00C987DA /* OCRUtility.swift */; };
 		84D7970621B7F45B00C6A9FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970521B7F45B00C6A9FE /* HomeViewController.swift */; };
 		84D7970721B7F56D00C6A9FE /* CardScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F921A68ED200C987DA /* CardScanner.xcdatamodeld */; };
+		84D7970921B7F5F400C6A9FE /* FaceDetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970821B7F5F400C6A9FE /* FaceDetectionUtility.swift */; };
+		84D7970B21B7FB7200C6A9FE /* DetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970A21B7FB7200C6A9FE /* DetectionUtility.swift */; };
 		D4A41D9822F2A7991BE0E4E7 /* Pods_CardScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BFC8A07B44F69B7CF2F46C /* Pods_CardScanner.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,7 +53,7 @@
 		17B3360A21A6DEA300C987DA /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
 		17B3360E21A7334300C987DA /* StatementLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementLabel.swift; sourceTree = "<group>"; };
 		17B3361021A7341E00C987DA /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
-		17B3361321A7E9FF00C987DA /* DetectionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionUtility.swift; sourceTree = "<group>"; };
+		17B3361321A7E9FF00C987DA /* CardDetectionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetectionUtility.swift; sourceTree = "<group>"; };
 		17B3361721A7EAEE00C987DA /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		17B3361921A8000C00C987DA /* OCRUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRUtility.swift; sourceTree = "<group>"; };
 		17B3361B21A8165700C987DA /* OCRSlicer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OCRSlicer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,8 @@
 		2DC12C39D9C72F1551453B4C /* Pods-IAME_ImageProcesse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE9828330097BBC41A30E83 /* Pods-IAME_ImageProcesse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.release.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.release.xcconfig"; sourceTree = "<group>"; };
 		84D7970521B7F45B00C6A9FE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		84D7970821B7F5F400C6A9FE /* FaceDetectionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetectionUtility.swift; sourceTree = "<group>"; };
+		84D7970A21B7FB7200C6A9FE /* DetectionUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionUtility.swift; sourceTree = "<group>"; };
 		CA6329285AD522E0A2B9528F /* Pods-CardScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.release.xcconfig"; sourceTree = "<group>"; };
 		DD253C0EF51AB2DC49CE3EA1 /* Pods-CardScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAME_ImageProcesse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,8 +203,10 @@
 			children = (
 				17B3365421A8230800C987DA /* ImageUtils.swift */,
 				17B3361721A7EAEE00C987DA /* Utilities.swift */,
-				17B3361321A7E9FF00C987DA /* DetectionUtility.swift */,
+				17B3361321A7E9FF00C987DA /* CardDetectionUtility.swift */,
+				84D7970821B7F5F400C6A9FE /* FaceDetectionUtility.swift */,
 				17B3361921A8000C00C987DA /* OCRUtility.swift */,
+				84D7970A21B7FB7200C6A9FE /* DetectionUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -381,13 +387,15 @@
 				84D796FB21B7F43D00C6A9FE /* ShowInfoViewController.swift in Sources */,
 				84D796FC21B7F43D00C6A9FE /* CaptureErrorViewController.swift in Sources */,
 				84D796FD21B7F43D00C6A9FE /* HistoryViewModel.swift in Sources */,
+				84D7970921B7F5F400C6A9FE /* FaceDetectionUtility.swift in Sources */,
 				84D796FE21B7F43D00C6A9FE /* DatabaseManager.swift in Sources */,
 				84D796FF21B7F43D00C6A9FE /* HistoryModel.swift in Sources */,
 				84D7970721B7F56D00C6A9FE /* CardScanner.xcdatamodeld in Sources */,
 				84D7970021B7F43D00C6A9FE /* DatabaseInstance.swift in Sources */,
 				84D7970121B7F43D00C6A9FE /* ImageUtils.swift in Sources */,
 				84D7970221B7F43D00C6A9FE /* Utilities.swift in Sources */,
-				84D7970321B7F43D00C6A9FE /* DetectionUtility.swift in Sources */,
+				84D7970B21B7FB7200C6A9FE /* DetectionUtility.swift in Sources */,
+				84D7970321B7F43D00C6A9FE /* CardDetectionUtility.swift in Sources */,
 				84D7970421B7F43D00C6A9FE /* OCRUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
