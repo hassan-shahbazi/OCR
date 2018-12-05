@@ -7,35 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		179A6BA121A681CB001773D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A6BA021A681CB001773D6 /* AppDelegate.swift */; };
 		179A6BA621A681CB001773D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179A6BA421A681CB001773D6 /* Main.storyboard */; };
 		179A6BA821A681CE001773D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179A6BA721A681CE001773D6 /* Assets.xcassets */; };
 		179A6BAB21A681CE001773D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 179A6BA921A681CE001773D6 /* LaunchScreen.storyboard */; };
-		17B335F721A68E9700C987DA /* DatabaseInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F621A68E9700C987DA /* DatabaseInstance.swift */; };
-		17B335FB21A68ED200C987DA /* IAME.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F921A68ED200C987DA /* IAME.xcdatamodeld */; };
-		17B335FF21A6929900C987DA /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335FE21A6929900C987DA /* HistoryModel.swift */; };
-		17B3360121A6CA6000C987DA /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360021A6CA6000C987DA /* DatabaseManager.swift */; };
-		17B3360321A6D46B00C987DA /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360221A6D46B00C987DA /* HistoryViewModel.swift */; };
-		17B3360521A6D4B600C987DA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360421A6D4B600C987DA /* HomeViewController.swift */; };
-		17B3360721A6D4CD00C987DA /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360621A6D4CD00C987DA /* CircleButton.swift */; };
-		17B3360921A6D5E100C987DA /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */; };
-		17B3360B21A6DEA300C987DA /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360A21A6DEA300C987DA /* CaptureViewController.swift */; };
-		17B3360F21A7334300C987DA /* StatementLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360E21A7334300C987DA /* StatementLabel.swift */; };
-		17B3361121A7341E00C987DA /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361021A7341E00C987DA /* ScanView.swift */; };
-		17B3361421A7E9FF00C987DA /* DetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361321A7E9FF00C987DA /* DetectionUtility.swift */; };
-		17B3361821A7EAEE00C987DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361721A7EAEE00C987DA /* Utilities.swift */; };
-		17B3361A21A8000C00C987DA /* OCRUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361921A8000C00C987DA /* OCRUtility.swift */; };
-		17B3362721A816B100C987DA /* Pods_IAME_ImageProcesse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B3362621A816B100C987DA /* Pods_IAME_ImageProcesse.framework */; };
-		17B3365321A821E000C987DA /* OCR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 17B3365221A821E000C987DA /* OCR.mlmodel */; };
-		17B3365521A8230800C987DA /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3365421A8230800C987DA /* ImageUtils.swift */; };
 		17B3365721A834DE00C987DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17B3365621A834DE00C987DA /* GoogleService-Info.plist */; };
-		17DE081421AA632A0033E95D /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081321AA632A0033E95D /* ShowInfoViewController.swift */; };
-		17DE081621AA66B40033E95D /* CaptureErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081521AA66B40033E95D /* CaptureErrorViewController.swift */; };
-		17DE081821AA66F60033E95D /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081721AA66F60033E95D /* RoundedButton.swift */; };
+		84D796F421B7F43D00C6A9FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A6BA021A681CB001773D6 /* AppDelegate.swift */; };
+		84D796F521B7F43D00C6A9FE /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360621A6D4CD00C987DA /* CircleButton.swift */; };
+		84D796F621B7F43D00C6A9FE /* StatementLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360E21A7334300C987DA /* StatementLabel.swift */; };
+		84D796F721B7F43D00C6A9FE /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361021A7341E00C987DA /* ScanView.swift */; };
+		84D796F821B7F43D00C6A9FE /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */; };
+		84D796F921B7F43D00C6A9FE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081721AA66F60033E95D /* RoundedButton.swift */; };
+		84D796FA21B7F43D00C6A9FE /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360A21A6DEA300C987DA /* CaptureViewController.swift */; };
+		84D796FB21B7F43D00C6A9FE /* ShowInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081321AA632A0033E95D /* ShowInfoViewController.swift */; };
+		84D796FC21B7F43D00C6A9FE /* CaptureErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DE081521AA66B40033E95D /* CaptureErrorViewController.swift */; };
+		84D796FD21B7F43D00C6A9FE /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360221A6D46B00C987DA /* HistoryViewModel.swift */; };
+		84D796FE21B7F43D00C6A9FE /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3360021A6CA6000C987DA /* DatabaseManager.swift */; };
+		84D796FF21B7F43D00C6A9FE /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335FE21A6929900C987DA /* HistoryModel.swift */; };
+		84D7970021B7F43D00C6A9FE /* DatabaseInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F621A68E9700C987DA /* DatabaseInstance.swift */; };
+		84D7970121B7F43D00C6A9FE /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3365421A8230800C987DA /* ImageUtils.swift */; };
+		84D7970221B7F43D00C6A9FE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361721A7EAEE00C987DA /* Utilities.swift */; };
+		84D7970321B7F43D00C6A9FE /* DetectionUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361321A7E9FF00C987DA /* DetectionUtility.swift */; };
+		84D7970421B7F43D00C6A9FE /* OCRUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B3361921A8000C00C987DA /* OCRUtility.swift */; };
+		84D7970621B7F45B00C6A9FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D7970521B7F45B00C6A9FE /* HomeViewController.swift */; };
+		84D7970721B7F56D00C6A9FE /* CardScanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17B335F921A68ED200C987DA /* CardScanner.xcdatamodeld */; };
+		D4A41D9822F2A7991BE0E4E7 /* Pods_CardScanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04BFC8A07B44F69B7CF2F46C /* Pods_CardScanner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		179A6B9D21A681CB001773D6 /* IAME_ImageProcesse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IAME_ImageProcesse.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BFC8A07B44F69B7CF2F46C /* Pods_CardScanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardScanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		179A6B9D21A681CB001773D6 /* CardScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		179A6BA021A681CB001773D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		179A6BA521A681CB001773D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		179A6BA721A681CE001773D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,7 +46,6 @@
 		17B335FE21A6929900C987DA /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		17B3360021A6CA6000C987DA /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		17B3360221A6D46B00C987DA /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
-		17B3360421A6D4B600C987DA /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = IAME_ImageProcesse/View/Controller/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		17B3360621A6D4CD00C987DA /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
 		17B3360821A6D5E100C987DA /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		17B3360A21A6DEA300C987DA /* CaptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +65,9 @@
 		17DE081721AA66F60033E95D /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2DC12C39D9C72F1551453B4C /* Pods-IAME_ImageProcesse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.debug.xcconfig"; sourceTree = "<group>"; };
 		5EE9828330097BBC41A30E83 /* Pods-IAME_ImageProcesse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IAME_ImageProcesse.release.xcconfig"; path = "Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse.release.xcconfig"; sourceTree = "<group>"; };
+		84D7970521B7F45B00C6A9FE /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CA6329285AD522E0A2B9528F /* Pods-CardScanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.release.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.release.xcconfig"; sourceTree = "<group>"; };
+		DD253C0EF51AB2DC49CE3EA1 /* Pods-CardScanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardScanner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner.debug.xcconfig"; sourceTree = "<group>"; };
 		E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IAME_ImageProcesse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17B3362721A816B100C987DA /* Pods_IAME_ImageProcesse.framework in Frameworks */,
+				D4A41D9822F2A7991BE0E4E7 /* Pods_CardScanner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +86,7 @@
 		179A6B9421A681CB001773D6 = {
 			isa = PBXGroup;
 			children = (
-				179A6B9F21A681CB001773D6 /* IAME_ImageProcesse */,
+				179A6B9F21A681CB001773D6 /* CardScanner */,
 				179A6B9E21A681CB001773D6 /* Products */,
 				9EC47116A7090685EF94259B /* Pods */,
 				9CD675AED2BC2873ACDB8007 /* Frameworks */,
@@ -94,12 +96,12 @@
 		179A6B9E21A681CB001773D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				179A6B9D21A681CB001773D6 /* IAME_ImageProcesse.app */,
+				179A6B9D21A681CB001773D6 /* CardScanner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		179A6B9F21A681CB001773D6 /* IAME_ImageProcesse */ = {
+		179A6B9F21A681CB001773D6 /* CardScanner */ = {
 			isa = PBXGroup;
 			children = (
 				17B3365621A834DE00C987DA /* GoogleService-Info.plist */,
@@ -110,7 +112,7 @@
 				17B3361221A7E9DB00C987DA /* Utility */,
 				179A6BB621A68208001773D6 /* Resources */,
 			);
-			path = IAME_ImageProcesse;
+			path = CardScanner;
 			sourceTree = "<group>";
 		};
 		179A6BB221A681DF001773D6 /* Model */ = {
@@ -163,7 +165,7 @@
 		179A6BB721A685F9001773D6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				17B3360421A6D4B600C987DA /* HomeViewController.swift */,
+				84D7970521B7F45B00C6A9FE /* HomeViewController.swift */,
 				17B3360A21A6DEA300C987DA /* CaptureViewController.swift */,
 				17DE081321AA632A0033E95D /* ShowInfoViewController.swift */,
 				17DE081521AA66B40033E95D /* CaptureErrorViewController.swift */,
@@ -187,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				17B335F621A68E9700C987DA /* DatabaseInstance.swift */,
-				17B335F921A68ED200C987DA /* IAME.xcdatamodeld */,
+				17B335F921A68ED200C987DA /* CardScanner.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -210,6 +212,7 @@
 				17B3361D21A8165A00C987DA /* TesseractOCR.framework */,
 				17B3361B21A8165700C987DA /* OCRSlicer.framework */,
 				E2EF9BC251D126D90580F209 /* Pods_IAME_ImageProcesse.framework */,
+				04BFC8A07B44F69B7CF2F46C /* Pods_CardScanner.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -219,6 +222,8 @@
 			children = (
 				2DC12C39D9C72F1551453B4C /* Pods-IAME_ImageProcesse.debug.xcconfig */,
 				5EE9828330097BBC41A30E83 /* Pods-IAME_ImageProcesse.release.xcconfig */,
+				DD253C0EF51AB2DC49CE3EA1 /* Pods-CardScanner.debug.xcconfig */,
+				CA6329285AD522E0A2B9528F /* Pods-CardScanner.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -226,9 +231,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		179A6B9C21A681CB001773D6 /* IAME_ImageProcesse */ = {
+		179A6B9C21A681CB001773D6 /* CardScanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 179A6BAF21A681CE001773D6 /* Build configuration list for PBXNativeTarget "IAME_ImageProcesse" */;
+			buildConfigurationList = 179A6BAF21A681CE001773D6 /* Build configuration list for PBXNativeTarget "CardScanner" */;
 			buildPhases = (
 				D4FD9C2BBCED91D2B3A55BB3 /* [CP] Check Pods Manifest.lock */,
 				179A6B9921A681CB001773D6 /* Sources */,
@@ -241,9 +246,9 @@
 			);
 			dependencies = (
 			);
-			name = IAME_ImageProcesse;
+			name = CardScanner;
 			productName = IAME_ImageProcesse;
-			productReference = 179A6B9D21A681CB001773D6 /* IAME_ImageProcesse.app */;
+			productReference = 179A6B9D21A681CB001773D6 /* CardScanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -261,7 +266,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 179A6B9821A681CB001773D6 /* Build configuration list for PBXProject "IAME_ImageProcesse" */;
+			buildConfigurationList = 179A6B9821A681CB001773D6 /* Build configuration list for PBXProject "CardScanner" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -274,7 +279,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				179A6B9C21A681CB001773D6 /* IAME_ImageProcesse */,
+				179A6B9C21A681CB001773D6 /* CardScanner */,
 			);
 		};
 /* End PBXProject section */
@@ -300,7 +305,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -309,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D4FD9C2BBCED91D2B3A55BB3 /* [CP] Check Pods Manifest.lock */ = {
@@ -323,7 +328,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IAME_ImageProcesse-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CardScanner-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -336,7 +341,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -355,7 +360,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IAME_ImageProcesse/Pods-IAME_ImageProcesse-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CardScanner/Pods-CardScanner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -365,26 +370,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17B3360F21A7334300C987DA /* StatementLabel.swift in Sources */,
-				17B3360921A6D5E100C987DA /* HistoryTableViewCell.swift in Sources */,
-				17B3361A21A8000C00C987DA /* OCRUtility.swift in Sources */,
-				17B3361421A7E9FF00C987DA /* DetectionUtility.swift in Sources */,
-				17B3361821A7EAEE00C987DA /* Utilities.swift in Sources */,
-				17B3360121A6CA6000C987DA /* DatabaseManager.swift in Sources */,
-				17B3360321A6D46B00C987DA /* HistoryViewModel.swift in Sources */,
-				17B3360521A6D4B600C987DA /* HomeViewController.swift in Sources */,
-				17B3361121A7341E00C987DA /* ScanView.swift in Sources */,
-				17B3360721A6D4CD00C987DA /* CircleButton.swift in Sources */,
-				17B335FB21A68ED200C987DA /* IAME.xcdatamodeld in Sources */,
-				17DE081821AA66F60033E95D /* RoundedButton.swift in Sources */,
-				179A6BA121A681CB001773D6 /* AppDelegate.swift in Sources */,
-				17B335FF21A6929900C987DA /* HistoryModel.swift in Sources */,
-				17DE081621AA66B40033E95D /* CaptureErrorViewController.swift in Sources */,
-				17B335F721A68E9700C987DA /* DatabaseInstance.swift in Sources */,
-				17B3365521A8230800C987DA /* ImageUtils.swift in Sources */,
-				17B3360B21A6DEA300C987DA /* CaptureViewController.swift in Sources */,
-				17B3365321A821E000C987DA /* OCR.mlmodel in Sources */,
-				17DE081421AA632A0033E95D /* ShowInfoViewController.swift in Sources */,
+				84D796F421B7F43D00C6A9FE /* AppDelegate.swift in Sources */,
+				84D796F521B7F43D00C6A9FE /* CircleButton.swift in Sources */,
+				84D796F621B7F43D00C6A9FE /* StatementLabel.swift in Sources */,
+				84D796F721B7F43D00C6A9FE /* ScanView.swift in Sources */,
+				84D796F821B7F43D00C6A9FE /* HistoryTableViewCell.swift in Sources */,
+				84D7970621B7F45B00C6A9FE /* HomeViewController.swift in Sources */,
+				84D796F921B7F43D00C6A9FE /* RoundedButton.swift in Sources */,
+				84D796FA21B7F43D00C6A9FE /* CaptureViewController.swift in Sources */,
+				84D796FB21B7F43D00C6A9FE /* ShowInfoViewController.swift in Sources */,
+				84D796FC21B7F43D00C6A9FE /* CaptureErrorViewController.swift in Sources */,
+				84D796FD21B7F43D00C6A9FE /* HistoryViewModel.swift in Sources */,
+				84D796FE21B7F43D00C6A9FE /* DatabaseManager.swift in Sources */,
+				84D796FF21B7F43D00C6A9FE /* HistoryModel.swift in Sources */,
+				84D7970721B7F56D00C6A9FE /* CardScanner.xcdatamodeld in Sources */,
+				84D7970021B7F43D00C6A9FE /* DatabaseInstance.swift in Sources */,
+				84D7970121B7F43D00C6A9FE /* ImageUtils.swift in Sources */,
+				84D7970221B7F43D00C6A9FE /* Utilities.swift in Sources */,
+				84D7970321B7F43D00C6A9FE /* DetectionUtility.swift in Sources */,
+				84D7970421B7F43D00C6A9FE /* OCRUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,19 +532,19 @@
 		};
 		179A6BB021A681CE001773D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DC12C39D9C72F1551453B4C /* Pods-IAME_ImageProcesse.debug.xcconfig */;
+			baseConfigurationReference = DD253C0EF51AB2DC49CE3EA1 /* Pods-CardScanner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92TDT63R6P;
 				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/IAME_ImageProcesse/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CardScanner/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.IAME.IAME-ImageProcesse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hassaniiii.cardScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -549,19 +553,19 @@
 		};
 		179A6BB121A681CE001773D6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EE9828330097BBC41A30E83 /* Pods-IAME_ImageProcesse.release.xcconfig */;
+			baseConfigurationReference = CA6329285AD522E0A2B9528F /* Pods-CardScanner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 92TDT63R6P;
 				ENABLE_BITCODE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/IAME_ImageProcesse/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CardScanner/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.IAME.IAME-ImageProcesse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hassaniiii.cardScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -571,7 +575,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		179A6B9821A681CB001773D6 /* Build configuration list for PBXProject "IAME_ImageProcesse" */ = {
+		179A6B9821A681CB001773D6 /* Build configuration list for PBXProject "CardScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				179A6BAD21A681CE001773D6 /* Debug */,
@@ -580,7 +584,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		179A6BAF21A681CE001773D6 /* Build configuration list for PBXNativeTarget "IAME_ImageProcesse" */ = {
+		179A6BAF21A681CE001773D6 /* Build configuration list for PBXNativeTarget "CardScanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				179A6BB021A681CE001773D6 /* Debug */,
@@ -592,13 +596,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		17B335F921A68ED200C987DA /* IAME.xcdatamodeld */ = {
+		17B335F921A68ED200C987DA /* CardScanner.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				17B335FA21A68ED200C987DA /* IAME.xcdatamodel */,
 			);
 			currentVersion = 17B335FA21A68ED200C987DA /* IAME.xcdatamodel */;
-			path = IAME.xcdatamodeld;
+			path = CardScanner.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

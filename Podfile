@@ -1,5 +1,5 @@
 
-target 'IAME_ImageProcesse' do
+target 'CardScanner' do
   use_frameworks!
 
   pod 'Firebase/Core'

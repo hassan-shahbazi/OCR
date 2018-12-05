@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>126284498711-osf14fsigqbfk18v1mpdhsl0rv3uuu67.apps.googleusercontent.com</string>
+	<string>12709829006-092jhuv33n9hbumprt6rg5fdof0nqit6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.126284498711-osf14fsigqbfk18v1mpdhsl0rv3uuu67</string>
+	<string>com.googleusercontent.apps.12709829006-092jhuv33n9hbumprt6rg5fdof0nqit6</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCGLirlxtwfC7CvLJHdOJZk7uwsvGm-zps</string>
+	<string>AIzaSyCbydfXX2g16ceHtjw0WkfJ-vZ80DuIe4o</string>
 	<key>GCM_SENDER_ID</key>
-	<string>126284498711</string>
+	<string>12709829006</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.IAME.IAME-ImageProcesse</string>
+	<string>com.hassaniiii.cardScanner</string>
 	<key>PROJECT_ID</key>
-	<string>imageproccessing-ec952</string>
+	<string>cardscanner-ebb1a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>imageproccessing-ec952.appspot.com</string>
+	<string>cardscanner-ebb1a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:126284498711:ios:74c5b1092ad8b182</string>
+	<string>1:12709829006:ios:f5d91cb16eac6dad</string>
 	<key>DATABASE_URL</key>
-	<string>https://imageproccessing-ec952.firebaseio.com</string>
+	<string>https://cardscanner-ebb1a.firebaseio.com</string>
 </dict>
 </plist>
