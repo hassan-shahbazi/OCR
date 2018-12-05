@@ -21,7 +21,7 @@ class DatabaseManager: NSObject {
         return objects.map({ return $0.object })
     }
         
-    public class func saveNewObject(object: PersonObject, image: UIImage) -> Bool {
+    public class func saveNewObject(object: PersonObject, image: UIImage, faceImage: UIImage) -> Bool {
         guard let newObject = NSEntityDescription.insertNewObject(forEntityName: "HistoryEntity", into: managedContext) as? HistoryManagedObject else { return false }
         newObject.id = getNewID()
         
@@ -33,6 +33,7 @@ class DatabaseManager: NSObject {
         newObject.birthdate = object.birthdate
         newObject.signature = object.signature
         newObject.nationality = object.nationality
+        newObject.faceImage = faceImage.pngData()
         
         newObject.image = image.pngData()
         newObject.date = getDate()

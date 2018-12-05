@@ -18,6 +18,7 @@ class PersonObject: NSObject {
     var gender:     Gender?
     var signature:  String?
     var nationality:String?
+    var faceImage:  UIImage?
 }
 
 class HistoryObject: NSObject {
@@ -39,11 +40,13 @@ class HistoryManagedObject: NSManagedObject {
     @NSManaged var nationality: String?
     @NSManaged var date:       Date?
     @NSManaged var image:      Data?
+    @NSManaged var faceImage:  Data?
 }
 
 extension HistoryManagedObject {
     var object: HistoryObject {
         let person = PersonObject()
+        
         person.idNumber = self.idNumber
         person.firstName = self.firstName
         person.sureName = self.sureName
@@ -52,6 +55,7 @@ extension HistoryManagedObject {
         if let gndr = self.gender { person.gender = Gender(rawValue: gndr) }
         person.signature = self.signature
         person.nationality = self.nationality
+        if let img = self.faceImage { person.faceImage = UIImage(data: img) }
         
         let object = HistoryObject()
         object.id = self.id?.intValue

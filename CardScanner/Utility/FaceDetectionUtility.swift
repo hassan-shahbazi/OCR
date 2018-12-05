@@ -40,21 +40,8 @@ class FaceDetectionUtility: DetectionUtility {
         guard let detectedFace = observations.first else { return }
         let imageSize = inputImage.extent.size
         
-        let boundingBox = detectedFace.boundingBox.scaled(to: imageSize)
-//        let topLeft = detectedFace.
-//        let topRight = detectedRectangle.topRight.scaled(to: imageSize)
-//        let bottomLeft = detectedRectangle.bottomLeft.scaled(to: imageSize)
-//        let bottomRight = detectedRectangle.bottomRight.scaled(to: imageSize)
-        var correctedImage = inputImage
-            .cropped(to: boundingBox)
-//            .applyingFilter("CIPerspectiveCorrection", parameters: [
-//                "inputTopLeft": CIVector(cgPoint: topLeft),
-//                "inputTopRight": CIVector(cgPoint: topRight),
-//                "inputBottomLeft": CIVector(cgPoint: bottomLeft),
-//                "inputBottomRight": CIVector(cgPoint: bottomRight)
-//                ])
-        
-        correctedImage = correctedImage.oriented(forExifOrientation: Int32(CGImagePropertyOrientation.up.rawValue))
+        let boundingBox = detectedFace.boundingBox.scaled(to: imageSize)        
+        let correctedImage = inputImage.cropped(to: boundingBox).oriented(forExifOrientation: Int32(CGImagePropertyOrientation.up.rawValue))
         DispatchQueue.main.async {
             self.delegate?.didDetectFaceImage(correctedImage, at: boundingBox)
         }

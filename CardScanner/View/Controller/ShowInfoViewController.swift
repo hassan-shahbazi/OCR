@@ -11,6 +11,7 @@ import UIKit
 class ShowInfoViewController: UIViewController {
     public var textBlocks: [String]!
     public var capturedImage: UIImage!
+    public var capturedFace: UIImage!
     private var textBlocksExtracted: Dictionary<String,String> = [:]
     private var sectionHeaders: [String] {
         return ["Surname", "First Name", "Surname at Birth", "ID Number", "Date of Birth", "Gender", "Signature", "Nationality"]
@@ -69,7 +70,7 @@ class ShowInfoViewController: UIViewController {
     }
     
     @IBAction func saveContinue(_ sender: UIButton) {
-        viewModel.saveNewPerson(data: textBlocksExtracted, image: capturedImage) { (succeed: Bool?) in
+        viewModel.saveNewPerson(data: textBlocksExtracted, image: capturedImage, faceImage: capturedFace) { (succeed: Bool?) in
             if let _ = succeed {
                 self.navigationController?.popToRootViewController(animated: true)
                 return

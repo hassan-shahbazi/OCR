@@ -21,7 +21,7 @@ class HistoryTableViewCell: UITableViewCell {
     public func setup(_ object: HistoryObject?) {
         guard let object = object else { return }
         
-        self.objectImage.image = object.image
+        self.objectImage.image = object.person?.faceImage
         self.objectName.text = (object.person?.firstName ?? "") + " " + (object.person?.sureName ?? "")
         self.objectDate.text = Utility.getString(from: object.date ?? Date())
     }

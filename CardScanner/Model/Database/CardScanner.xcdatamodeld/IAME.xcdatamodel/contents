@@ -3,6 +3,7 @@
     <entity name="HistoryEntity" representedClassName=".HistoryManagedObject" syncable="YES">
         <attribute name="birthdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="faceImage" optional="YES" attributeType="Binary" storedInTruthFile="YES" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -14,6 +15,6 @@
         <attribute name="sureNameBirthDate" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="HistoryEntity" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="HistoryEntity" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>

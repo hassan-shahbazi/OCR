@@ -19,7 +19,7 @@ class HistoryViewModel: NSObject {
         return DatabaseManager.getAllObjects()
     }
     
-    public func saveNewPerson(data: [String:String], image: UIImage, completionHandler: personSavingCompletionHandler) {
+    public func saveNewPerson(data: [String:String], image: UIImage, faceImage: UIImage, completionHandler: personSavingCompletionHandler) {
         let person = PersonObject()
         if let firstName = data["first name"] { person.firstName = firstName }
         if let surName = data["surname"] { person.sureName = surName }
@@ -30,7 +30,7 @@ class HistoryViewModel: NSObject {
         if let signature = data["signature"] { person.signature = signature }
         if let nationality = data["nationality"] { person.nationality = nationality }
         
-        if DatabaseManager.saveNewObject(object: person, image: image) {
+        if DatabaseManager.saveNewObject(object: person, image: image, faceImage: faceImage) {
             completionHandler(true)
             return
         }

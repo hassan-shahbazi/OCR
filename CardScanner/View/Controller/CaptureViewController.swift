@@ -34,6 +34,7 @@ class CaptureViewController: UIViewController {
     
     //Capture result
     private var capturedImage: UIImage!
+    private var capturedFace: UIImage!
     private var extractedTextError: Error? {
         didSet {
             self.performSegue(withIdentifier: "showError", sender: self)
@@ -186,6 +187,7 @@ class CaptureViewController: UIViewController {
         if let destination = segue.destination as? ShowInfoViewController {
             destination.textBlocks = self.extractedTextBlocks
             destination.capturedImage = self.capturedImage
+            destination.capturedFace = self.capturedFace
         }
     }
 }
@@ -267,5 +269,6 @@ extension CaptureViewController: CardDetectionUtilityDelegate {
 extension CaptureViewController: FaceDetectionUtilityDelegate {
     func didDetectFaceImage(_ image: CIImage, at rect: CGRect) {
         updateScanArea(true)
+        self.capturedFace = self.getUIImage(from: image)
     }
 }
