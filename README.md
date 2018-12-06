@@ -1,6 +1,6 @@
 # OCR (Card Scanner)
 
-A simple iOS application which can scan and detect *Mauritius ID Cards*, and store the information for later user. It is using **CoreML** and **Google Vision** for object and text detections.
+A simple iOS application which can scan and detect *Mauritius ID Cards*, and store extracted information. It is using **CoreML** and **Google Vision** for object and text detections.
 
 A sample *Mauritius ID Card* is availabe under the [Resources](https://github.com/Hassaniiii/OCR/tree/master/CardScanner/Resources) folder.
 
